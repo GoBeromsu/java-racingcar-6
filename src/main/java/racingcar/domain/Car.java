@@ -13,6 +13,12 @@ public class Car implements Comparable<Car> {
         this.position = 0;
     }
 
+    public void move(final int power) {
+        if (power >= 4) {
+            this.position++;
+        }
+    }
+
     public static Car create(final String name) {
         return new Car(name);
     }
