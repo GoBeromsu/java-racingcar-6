@@ -51,7 +51,7 @@ public class Car implements Comparable<Car> {
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getPosition() {
