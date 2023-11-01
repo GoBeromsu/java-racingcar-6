@@ -12,6 +12,11 @@ public class Car implements Comparable<Car> {
         this.name = name;
         this.position = 0;
     }
+
+    public static Car create(final String name) {
+        return new Car(name);
+    }
+
     public boolean isSamePosition(final Car diffCar) {
         return this.position == diffCar.position;
     }
