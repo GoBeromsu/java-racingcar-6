@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Car implements Comparable<Car> {
 
     private final String name;
-    private final int position;
+    private int position;
 
     private Car(final String name) {
         this.name = name;
