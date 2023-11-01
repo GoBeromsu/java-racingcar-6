@@ -1,0 +1,25 @@
+public class Car implements Comparable<Car> {
+
+    private final String name;
+    private final int position;
+
+    private Car(final String name) {
+        this.name = name;
+        this.position = 0;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
+    public int compareTo(Car diffCar) {
+        return position - diffCar.position;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
