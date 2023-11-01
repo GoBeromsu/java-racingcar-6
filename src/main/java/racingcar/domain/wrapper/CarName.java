@@ -11,6 +11,12 @@ public class CarName {
         this.name = name;
     }
 
+    private void validateNameBlank(final String name) {
+        if (name.isBlank()) {
+            throw new IllegalArgumentException("자동차 이름은 공백일 수 없습니다.");
+        }
+    }
+
     private void validateNameLength(final String name) {
         if (name.length() > 5) {
             throw new IllegalArgumentException("자동차 이름은 5자를 초과할 수 없습니다.");
