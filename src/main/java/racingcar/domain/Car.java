@@ -1,3 +1,8 @@
+package racingcar.domain;
+
+
+import java.util.Objects;
+
 public class Car implements Comparable<Car> {
 
     private final String name;
@@ -7,6 +12,22 @@ public class Car implements Comparable<Car> {
         this.name = name;
         this.position = 0;
     }
+    public boolean isSamePosition(final Car diffCar) {
+        return this.position == diffCar.position;
+    }
+
+    @Override
+    public boolean equals(final Object diffCar) {
+        if (this == diffCar) {
+            return true;
+        }
+        if (diffCar == null || getClass() != diffCar.getClass()) {
+            return false;
+        }
+        Car car = (Car) diffCar;
+        return Objects.equals(name, car.name);
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
@@ -16,6 +37,7 @@ public class Car implements Comparable<Car> {
     public int compareTo(Car diffCar) {
         return position - diffCar.position;
     }
+
     public String getName() {
         return name;
     }
@@ -23,3 +45,4 @@ public class Car implements Comparable<Car> {
     public int getPosition() {
         return position;
     }
+}
