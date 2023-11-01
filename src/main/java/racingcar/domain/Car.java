@@ -2,14 +2,15 @@ package racingcar.domain;
 
 
 import java.util.Objects;
+import racingcar.domain.wrapper.CarName;
 
 public class Car implements Comparable<Car> {
 
-    private final String name;
+    private final CarName name;
     private int position;
 
     private Car(final String name) {
-        this.name = name;
+        this.name = CarName.create(name);
         this.position = 0;
     }
 
