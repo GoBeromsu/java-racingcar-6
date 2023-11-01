@@ -7,7 +7,8 @@ public class CarName {
     private final String name;
 
     private CarName(final String name) {
-        // todo: validate name
+        validateNameBlank(name);
+        validateNameLength(name);
         this.name = name;
     }
 
