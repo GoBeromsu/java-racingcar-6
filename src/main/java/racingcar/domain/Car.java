@@ -3,20 +3,21 @@ package racingcar.domain;
 
 import java.util.Objects;
 import racingcar.domain.wrapper.CarName;
+import racingcar.domain.wrapper.CarPosition;
 
 public class Car implements Comparable<Car> {
 
     private final CarName name;
-    private int position;
+    private final CarPosition position;
 
     private Car(final String name) {
         this.name = CarName.create(name);
-        this.position = 0;
+        this.position = CarPosition.create();
     }
 
     public void move(final int power) {
         if (power >= 4) {
-            this.position++;
+            position.addPosition();
         }
     }
 
@@ -47,7 +48,7 @@ public class Car implements Comparable<Car> {
 
     @Override
     public int compareTo(Car diffCar) {
-        return position - diffCar.position;
+        return position.getPosition() - diffCar.position.getPosition();
     }
 
     public String getName() {
@@ -55,6 +56,6 @@ public class Car implements Comparable<Car> {
     }
 
     public int getPosition() {
-        return position;
+        return position.getPosition();
     }
 }
