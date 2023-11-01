@@ -1,5 +1,7 @@
 package racingcar.domain.wrapper;
 
+import static racingcar.domain.constant.CarCostant.INIT_POSITION;
+
 public class CarPosition {
 
     private int position;
@@ -9,7 +11,7 @@ public class CarPosition {
     }
 
     public static CarPosition create() {
-        return new CarPosition(1);
+        return new CarPosition(INIT_POSITION.getValue());
     }
 
     public void addPosition() {

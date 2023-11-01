@@ -1,6 +1,8 @@
 package racingcar.domain;
 
 
+import static racingcar.domain.constant.CarCostant.CAR_MOVE_CONDITION;
+
 import java.util.Objects;
 import racingcar.domain.wrapper.CarName;
 import racingcar.domain.wrapper.CarPosition;
@@ -16,7 +18,7 @@ public class Car implements Comparable<Car> {
     }
 
     public void move(final int power) {
-        if (power >= 4) {
+        if (power >= CAR_MOVE_CONDITION.getValue()) {
             position.addPosition();
         }
     }
