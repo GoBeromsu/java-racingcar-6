@@ -26,4 +26,14 @@ public class CartTest {
         assertThat(isSamePosition).isTrue();
     }
 
+    @Test
+    void givenSampPosition_thenReturnFalse() {
+        // given
+        Car diffCar = Car.create("crong");
+        diffCar.move(5);
+        // when
+        boolean isSamePosition = testCar.isSamePosition(diffCar);
+        // then
+        assertThat(isSamePosition).isFalse();
+    }
 }
