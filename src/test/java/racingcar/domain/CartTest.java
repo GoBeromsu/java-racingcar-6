@@ -27,6 +27,7 @@ public class CartTest {
     }
 
     @Test
+    @DisplayName("입력으로 들어온 위치와 현재 자동차의 위치가 다르다면 false를 반환한다.")
     void givenSampPosition_thenReturnFalse() {
         // given
         Car diffCar = Car.create("crong");
